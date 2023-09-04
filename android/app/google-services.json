@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "285615288336",
+    "project_id": "money-splitter-94244",
+    "storage_bucket": "money-splitter-94244.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285615288336:android:c94f7fa9388c69a2ee9a95",
+        "android_client_info": {
+          "package_name": "com.example.money_splitter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285615288336-ubj6p80t5gkk5mtu4mk1onuoi2n6unk4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFVfiNCVH2RDdT5x3jqglfRuP9tGjfYko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285615288336-ubj6p80t5gkk5mtu4mk1onuoi2n6unk4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
