@@ -6,8 +6,9 @@ part 'party_model.freezed.dart';
 class PartyModel with _$PartyModel {
   const PartyModel._();
   const factory PartyModel({
-    final String? id,
+    @Default('')final String id,
     @Default('') final String name,
+    @Default('') final String timestamp,
   }) = _PartyModel;
   factory PartyModel.fromJson(Map<String, dynamic> json) =>
       _$PartyModelFromJson(json);

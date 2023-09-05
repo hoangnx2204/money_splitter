@@ -20,8 +20,9 @@ PartyModel _$PartyModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PartyModel {
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,7 @@ abstract class $PartyModelCopyWith<$Res> {
           PartyModel value, $Res Function(PartyModel) then) =
       _$PartyModelCopyWithImpl<$Res, PartyModel>;
   @useResult
-  $Res call({String? id, String name});
+  $Res call({String id, String name, String timestamp});
 }
 
 /// @nodoc
@@ -51,17 +52,22 @@ class _$PartyModelCopyWithImpl<$Res, $Val extends PartyModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? name = null,
+    Object? timestamp = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -75,7 +81,7 @@ abstract class _$$_PartyModelCopyWith<$Res>
       __$$_PartyModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? id, String name});
+  $Res call({String id, String name, String timestamp});
 }
 
 /// @nodoc
@@ -89,17 +95,22 @@ class __$$_PartyModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? name = null,
+    Object? timestamp = null,
   }) {
     return _then(_$_PartyModel(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -108,20 +119,25 @@ class __$$_PartyModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_PartyModel extends _PartyModel {
-  const _$_PartyModel({this.id, this.name = ''}) : super._();
+  const _$_PartyModel({this.id = '', this.name = '', this.timestamp = ''})
+      : super._();
 
   factory _$_PartyModel.fromJson(Map<String, dynamic> json) =>
       _$$_PartyModelFromJson(json);
 
   @override
-  final String? id;
+  @JsonKey()
+  final String id;
   @override
   @JsonKey()
   final String name;
+  @override
+  @JsonKey()
+  final String timestamp;
 
   @override
   String toString() {
-    return 'PartyModel(id: $id, name: $name)';
+    return 'PartyModel(id: $id, name: $name, timestamp: $timestamp)';
   }
 
   @override
@@ -130,12 +146,14 @@ class _$_PartyModel extends _PartyModel {
         (other.runtimeType == runtimeType &&
             other is _$_PartyModel &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name);
+  int get hashCode => Object.hash(runtimeType, id, name, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -152,17 +170,21 @@ class _$_PartyModel extends _PartyModel {
 }
 
 abstract class _PartyModel extends PartyModel {
-  const factory _PartyModel({final String? id, final String name}) =
-      _$_PartyModel;
+  const factory _PartyModel(
+      {final String id,
+      final String name,
+      final String timestamp}) = _$_PartyModel;
   const _PartyModel._() : super._();
 
   factory _PartyModel.fromJson(Map<String, dynamic> json) =
       _$_PartyModel.fromJson;
 
   @override
-  String? get id;
+  String get id;
   @override
   String get name;
+  @override
+  String get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$_PartyModelCopyWith<_$_PartyModel> get copyWith =>

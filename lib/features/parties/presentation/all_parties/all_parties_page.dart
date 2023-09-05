@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:money_splitter/features/parties/data/models/party_model.dart';
-import 'package:money_splitter/features/parties/presentation/all_parties_provider.dart';
+import 'package:intl/intl.dart';
+import 'package:money_splitter/features/parties/presentation/party_detail/party_detail.dart';
+
+import '../../data/models/party_model.dart';
+import 'all_parties_provider.dart';
 
 class AllPartiesPage extends StatefulWidget {
   const AllPartiesPage({super.key});
@@ -25,6 +28,7 @@ class _AllPartiesPageState extends State<AllPartiesPage> {
                   const PartyModel(
                     id: '02933',
                     name: 'error',
+                    timestamp: '0',
                   ),
                 ],
               );
@@ -34,6 +38,20 @@ class _AllPartiesPageState extends State<AllPartiesPage> {
               final party = allParties[index];
               return ListTile(
                 title: Text(party.name),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => PartyDetailPage(party),
+                    ),
+                  );
+                },
+                subtitle: Text(
+                  DateFormat('dd/MM/yyy').format(
+                    DateTime.fromMillisecondsSinceEpoch(
+                      int.tryParse(party.timestamp) ?? 0,
+                    ),
+                  ),
+                ),
               );
             },
           );
